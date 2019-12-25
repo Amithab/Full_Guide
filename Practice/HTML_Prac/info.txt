@@ -1,0 +1,2 @@
+github for xmledit plugin is github.com/sukima/xmledit/
+other plugin at github.com/othree/xml.vim - adds code folding and nested tag matching

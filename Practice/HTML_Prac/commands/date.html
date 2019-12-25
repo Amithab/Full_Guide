@@ -1,0 +1,437 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>date</title>
+    <link href="commands.css" rel="stylesheet"/>
+  </head>
+  <style>
+  .cursor {
+    width: 5px;
+    height: 10px;
+    background-color: white;
+    display:inline-block;
+  }
+  #container {
+    width: 9px;
+    height: 18px;
+    background-color: white;
+    color: green;
+    position: absolute;
+    margin: 0px 0px 0px 10px;
+  }
+  </style>
+  <body>
+    <h1>date example:</h1>
+    <h3>In terminal:</h3>
+    <!--<div id="terminal">|asldkjflwk</div> previous blinking example-->
+    <!--<button onclick="move()">click</button>-->
+    <p>date [OPTION]... [+FORMAT]</p>
+    <div>Just date</div>
+    <!--<div id="terminal-top"><div id="exit-button"><div id="x-symbol">
+		<svg height="6" width="6">
+			<defs>
+				<filter id="f1" x="0" y="0" width="200%" height = "200%">
+					<feOffset result="offOut" in="SourceGraphic" dx="0" dy="-1" />
+					<feBlend in="SourceGraphic" in2="offOut" mode="normal" />
+				</filter>
+			</defs>
+  		<line x1="0" y1="0" x2="6" y2="6" style="stroke:rgb(0,0,0);stroke-width:1" filter="url(#f1)"/>
+  		<line x1="6" y1="0" x2="0" y2="6" style="stroke:rgb(0,0,0);stroke-width:1" filter="url(#f1)"/>
+		</svg>
+</div></div><div id="minimize-button"><div id="minimize-symbol">
+		<svg height="6" width="8">-->
+			<!--<defs>
+				<filter id="f1" x="0" y="0" width="200%" height = "200%">
+					<feOffset result="offOut" in="SourceGraphic" dx="0" dy="-1" />
+					<feBlend in="SourceGraphic" in2="offOut" mode="normal" />
+				</filter>
+			</defs>-->
+  		<!--<line x1="0" y1="5" x2="8" y2="5" style="stroke:rgb(0,0,0);stroke-width:1" />
+		</svg>
+
+</div></div><div id="resize-button"></div></div>
+    <div id="terminal-background">userid@localhost<span class="whiteText">:</span><span class="blueText">~</span><span class="whiteText">$</span> 
+      <div id="container" class="cursor">
+      
+      </div>
+    </div>-->
+    <img style="border: 1px solid black;" alt="Demo of date in terminal." src="../../../assets/gifs/unix/date/base.gif" height="100rem" width="400rem">
+    <div>Date in utc</div>
+    <img style="border: 1px solid black;" alt="Demo of date in utc time in terminal." src="../../../assets/gifs/unix/date/utc.gif" height="100rem" width="400rem">
+    <div>To get seconds from epoch. Epoch is 00:00:00 UTC, January 1, 1970</div>
+    <img style="border: 1px solid black;" alt="Demo of current seconds from epoch in terminal." src="../../../assets/gifs/unix/date/seconds.gif" height="100rem" width="400rem">
+    <div>-r takes an integer as seconds from epoch. Add u for utc.</div>
+    <img style="border: 1px solid black;" alt="Demo of 0 seconds from epoch in utc time in terminal." src="../../../assets/gifs/unix/date/epoch.gif" height="100rem" width="400rem">
+    <div>Input current seconds from epoch to get current time in utc.</div>
+    <img style="border: 1px solid black;" alt="Demo of current seconds from epoch in utc time in terminal." src="../../../assets/gifs/unix/date/betterseconds.gif" height="120rem" width="400rem">
+    <div>-r takes a filename to get last modified time.</div>
+    <img style="border: 1px solid black;" alt="Demo of last modified time of file in terminal." src="../../../assets/gifs/unix/date/modified_file.gif" height="120rem" width="400rem">
+    <p>Format:</p>
+
+		
+    <div>Example of format:</div>
+    <img style="border: 1px solid black;" alt="Demo of format in terminal." src="../../../assets/gifs/unix/date/exampleformat.gif" height="120rem" width="400rem">
+    <div>Escaping the percentage symbol:</div>
+    <img style="border: 1px solid black;" alt="Demo of %% in terminal." src="../../../assets/gifs/unix/date/escape.gif" height="120rem" width="400rem">
+    <div>Formatting with text:</div>
+    <img style="border: 1px solid black;" alt="Demo of including text in format in terminal." src="../../../assets/gifs/unix/date/text.gif" height="120rem" width="400rem">
+
+		<div>All the format specifiers: "date +[]"</div>
+
+    <div>Legend:</div>
+    <div>
+      <img alt="sqcup character" src="../../../assets/imgs/unix/date/sqcup2.png" height="10rem" width="10rem">
+      - leading spaces
+    </div>
+    <span><strong>0</strong> - leading zeros</span>
+
+		<table style="border: 1px solid black;">
+			<tr>
+        <th></th>
+				<th>Lowercase</th>
+				<th>Uppercase</th>
+			</tr>
+			<tr>
+        <td class="letter">a</td>
+				<td class="tooltip">abbreviated weekday
+          <img class="tooltiptext" alt="Demo of %a in terminal." src="../../../assets/gifs/unix/date/a.gif">
+					
+				</td>
+				<td class="tooltip">
+          full weekday
+          <img class="tooltiptext" alt="Demo of %A in terminal." src="../../../assets/gifs/unix/date/aU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">b</td>
+				<td class="tooltip">
+					abbreviated month
+          <img class="tooltiptext" alt="Demo of %b in terminal." src="../../../assets/gifs/unix/date/b.gif">
+				</td>
+				<td class="tooltip">
+          full month
+          <img class="tooltiptext" alt="Demo of %B in terminal." src="../../../assets/gifs/unix/date/bU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">c</td>
+				<td class="tooltip">
+          same as <span style="font-family:'Courier New',Courier, monospace;">date</span> without timezone
+          <img id="extrawidetooltip" class="tooltiptext" alt="Demo of %c in terminal." src="../../../assets/gifs/unix/date/c.gif">
+        </td>
+				<td class="tooltip">
+          first two digits of year aka the century
+          <img class="tooltiptext" alt="Demo of %C in terminal." src="../../../assets/gifs/unix/date/cU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">d</td>
+				<td style="display:flex;" class="tooltip">
+          <span style="width:100%;">
+            day of the month
+          </span>
+          <span style="text-align:right;"><strong>0</strong></span>
+          <img class="tooltiptext" alt="Demo of %d in terminal." src="../../../assets/gifs/unix/date/d.gif">
+        </td>
+				<td class="tooltip">
+          date in format MM/DD/YY
+          <img class="tooltiptext" alt="Demo of %D in terminal." src="../../../assets/gifs/unix/date/dU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">e</td>
+        <td style="display:flex;" class="tooltip">
+          <span style="width:100%;">
+          day of the month
+          </span>
+          <span style="text-align:right;">
+          <img alt="sqcup character" src="../../../assets/imgs/unix/date/sqcup2.png" height="10rem" width="10rem">
+          <img class="tooltiptext" alt="Demo of %e in terminal." src="../../../assets/gifs/unix/date/e.gif">
+          </span>
+        </td>
+				<td>--</td>
+			</tr>
+			<tr>
+        <td class="letter">f</td>
+				<td>--</td>
+				<td class="tooltip">
+          full date YYYY-MM-DD
+          <img class="tooltiptext" alt="Demo of %F in terminal." src="../../../assets/gifs/unix/date/fU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">g</td>
+				<td class="tooltip">
+          last two digits of year
+          <img class="tooltiptext" alt="Demo of %g in terminal." src="../../../assets/gifs/unix/date/g.gif">
+        </td>
+				<td class="tooltip">
+          full year
+          <img class="tooltiptext" alt="Demo of %G in terminal." src="../../../assets/gifs/unix/date/gU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">h</td>
+				<td class="tooltip">
+          same as %b
+          <img class="tooltiptext" alt="Demo of %h in terminal." src="../../../assets/gifs/unix/date/h.gif">
+        </td>
+				<td style="display:flex;" class="tooltip">
+          <span style="width:100%;">
+            hour (00-23)
+          </span>
+          <span style="text-align:right;">
+            <strong>0</strong>
+          </span>
+          <img class="tooltiptext" alt="Demo of %H in terminal." src="../../../assets/gifs/unix/date/hU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">i</td>
+				<td>--</td>
+				<td style="display:flex;" class="tooltip">
+          <span style="width:100%;">
+            hour (00-12)
+          </span>
+          <span style="text-align:right;">
+            <strong>0</strong>
+          </span>
+          <img class="tooltiptext" alt="Demo of %I in terminal." src="../../../assets/gifs/unix/date/iU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">j</td>
+				<td style="display:flex;" class="tooltip">
+          <span style="width:100%">
+            day of year (000-366)
+          </span>
+          <span style="text-align:right;">
+            <strong>0</strong>
+          </span>
+          <img class="tooltiptext" alt="Demo of %j in terminal." src="../../../assets/gifs/unix/date/j.gif">
+        </td>
+				<td>--</td>
+			</tr>
+			<tr>
+        <td class="letter">k</td>
+        <td style="display:flex;" class="tooltip">
+          <span style="width:100%;">
+				    hour ( 0-23)
+          </span>
+          <span style="text-align:right;">
+          <img alt="sqcup character" src="../../../assets/imgs/unix/date/sqcup2.png" height="10rem" width="10rem">
+          </span>
+          <img class="tooltiptext" alt="Demo of %k in terminal." src="../../../assets/gifs/unix/date/k.gif">
+        </td>
+				<td>--</td>
+			</tr>
+			<tr>
+        <td class="letter">l</td>
+        <td style="display:flex;" class="tooltip">
+          <span style="width:100%;">
+				    hour ( 0-12)
+          </span>
+          <span style="text-align:right;">
+          <img alt="sqcup character" src="../../../assets/imgs/unix/date/sqcup2.png" height="10rem" width="10rem">
+          </span>
+          <img class="tooltiptext" alt="Demo of %l in terminal." src="../../../assets/gifs/unix/date/l.gif">
+        </td>
+				<td>--</td>
+			</tr>
+			<tr>
+        <td class="letter">m</td>
+        <td class="tooltip">
+          <div style="display:flex;">
+          <span style="width:100%;">
+            month (01-12)
+          </span>
+          <span style="text-align:right;">
+            <strong>0</strong>
+          </span>
+          </div>
+          <img class="tooltiptext" alt="Demo of %m in terminal." src="../../../assets/gifs/unix/date/m.gif">
+        </td>
+				<td style="display:flex;" class="tooltip">
+          <span style="width:100%;">
+            minute (00-59)
+          </span>
+          <span style="text-align:right;">
+            <strong>0</strong>
+          </span>
+          <img class="tooltiptext" alt="Demo of %M in terminal." src="../../../assets/gifs/unix/date/mU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">n</td>
+				<td class="tooltip">
+          newline
+          <img class="tooltiptext" alt="Demo of %n in terminal." src="../../../assets/gifs/unix/date/n.gif">
+        </td>
+				<td>--</td>
+			</tr>
+			<tr>
+        <td class="letter">o</td>
+				<td>--</td>
+				<td>--</td>
+			</tr>
+			<tr>
+        <td class="letter">p</td>
+				<td class="tooltip">
+          AM or PM
+          <img class="tooltiptext" alt="Demo of %p in terminal." src="../../../assets/gifs/unix/date/p.gif">
+        </td>
+				<td>--</td>
+			</tr>
+			<tr>
+        <td class="letter">q</td>
+				<td>--</td>
+				<td>--</td>
+			</tr>
+			<tr>
+        <td class="letter">r</td>
+        <td class="tooltip">
+          <div style="display:flex;">
+          <span style="width:100%;">
+            time in format hh:mm:ss AM/PM 
+          </span>
+          <span style="text-align:right;">
+            <strong>0</strong>
+          </span>
+          </div>
+          <img class="tooltiptext" alt="Demo of %r in terminal." src="../../../assets/gifs/unix/date/r.gif">
+        </td>
+				<td style="display:flex;" class="tooltip">
+          <span style="width:100%">
+            time in format hh:mm 
+          </span>
+          <span style="text-align:right;">
+            <strong>0</strong>
+          </span>
+          <img class="tooltiptext" alt="Demo of %R in terminal." src="../../../assets/gifs/unix/date/rU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">s</td>
+				<td class="tooltip">
+          seconds since epoch
+          <img class="tooltiptext" alt="Demo of %s in terminal." src="../../../assets/gifs/unix/date/s.gif">
+        </td>
+				<td style="display:flex;" class="tooltip">
+          <span style="width:100%;">
+            seconds (00-61)
+          </span>
+          <span style="text-align:right;">
+            <strong>0</strong>
+          </span>
+          <img class="tooltiptext" alt="Demo of %S in terminal." src="../../../assets/gifs/unix/date/sU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">t</td>
+				<td class="tooltip">
+          tab
+          <img class="tooltiptext" alt="Demo of %t in terminal." src="../../../assets/gifs/unix/date/t.gif">
+        </td>
+				<td class="tooltip">
+          time in format hh:mm:ss
+          <img class="tooltiptext" alt="Demo of %T in terminal." src="../../../assets/gifs/unix/date/tU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">u</td>
+				<td class="tooltip">
+          number of weekday (1-7) 1 is Monday
+          <img class="tooltiptext" alt="Demo of %u in terminal." src="../../../assets/gifs/unix/date/u.gif">
+        </td>
+				<td style="display:flex;" class="tooltip">
+          <span style="width:100%;">
+            week number of year (00-53) Sunday as first day
+          </span>
+          <span style="text-align:right;">
+            <strong>0</strong>
+          </span>
+          <img class="tooltiptext" alt="Demo of %U in terminal." src="../../../assets/gifs/unix/date/uU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">v</td>
+        <td style="display:flex;" class="tooltip">
+          <span style="width:100%;">
+				    date in format like 22-Dec-2019 
+          </span>
+          <span style="text-align:right;">
+          <img alt="sqcup character" src="../../../assets/imgs/unix/date/sqcup2.png" height="10rem" width="10rem">
+          </span>
+          <img class="tooltiptext" alt="Demo of %v in terminal." src="../../../assets/gifs/unix/date/v.gif">
+        </td>
+				<td class="tooltip">
+          same as %U except (01-53) Monday as first day
+          <img class="tooltiptext" alt="Demo of %V in terminal." src="../../../assets/gifs/unix/date/vU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">w</td>
+				<td class="tooltip">
+          number of weekday (0-6) 0 is Sunday
+          <img class="tooltiptext" alt="Demo of %w in terminal." src="../../../assets/gifs/unix/date/w.gif">
+        </td>
+				<td class="tooltip">
+          same as %U except Monday as first day
+          <img class="tooltiptext" alt="Demo of %W in terminal." src="../../../assets/gifs/unix/date/wU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">x</td>
+				<td class="tooltip">
+          locale's date format
+          <img class="tooltiptext" alt="Demo of %x in terminal." src="../../../assets/gifs/unix/date/x.gif">
+        </td>
+				<td class="tooltip">
+          locale's time format
+          <img class="tooltiptext" alt="Demo of %X in terminal." src="../../../assets/gifs/unix/date/xU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">y</td>
+				<td class="tooltip">
+          same as %g
+          <img class="tooltiptext" alt="Demo of %y in terminal." src="../../../assets/gifs/unix/date/y.gif">
+        </td>
+				<td class="tooltip">
+          same as %G
+          <img class="tooltiptext" alt="Demo of %Y in terminal." src="../../../assets/gifs/unix/date/yU.gif">
+        </td>
+			</tr>
+			<tr>
+        <td class="letter">z</td>
+				<td class="tooltip">
+          numerical time zone
+          <img class="tooltiptext" alt="Demo of %z in terminal." src="../../../assets/gifs/unix/date/z.gif">
+        </td>
+				<td class="tooltip">
+          time zone abbreviation
+          <img class="tooltiptext" alt="Demo of %Z in terminal." src="../../../assets/gifs/unix/date/zU.gif">
+        </td>
+			</tr>
+		</table>
+
+    <!-- JS for blinking cursor<script>
+    function move() {
+      var elem = document.getElementById('container');
+      var pos = 0;
+      function updateLater() {
+        if(pos%2==0) {
+          elem.style.opacity = "1";
+        }
+        else {
+          elem.style.opacity = "0";
+        }
+        pos+=1;
+        setTimeout(updateLater, 600);
+      }
+      updateLater();
+    }
+    </script>
+    <script>move();</script> -->
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>                                                                 
+<html>                                                                          
+  <head>                                                                        
+    <title>date</title>                                                         
+  </head>                                                                       
+  <style>                                                                       
+                                                                           
+  #container {                                                                  
+    width: 20px;                                                                
+    height: 20px;                                                               
+    background-color: red;   
+    color: green;
+    opacity:1;
+  }                                                                               
+  </style>                                                                      
+  <body>                                                                        
+                                      
+    <button onclick="move()">click</button>                                       
+    <div id="container">asdfadfasd</div>                                              
+    <p></p>                                                                     
+    <script> function move() {
+       var i = 0;
+       
+       //clrscr();
+       //print('<b>Queuing log</b>:');
+       function updateLater() {
+       		 if(i%2==0) {
+       		 		document.getElementById('container').style.opacity = "1";
+           }
+           else {
+           		document.getElementById('container').style.opacity = "0";
+           }
+           i+=1;
+           //d.getElementById('output').innerHTML = (i++);
+           //print('<code>d.getElementById(\'output\').innerHTML = i</code>',' queued'+i);
+           if (i < 100) {
+               setTimeout(updateLater, 1000);
+               //print('<code>setTimeout</code> queued');
+           }
+       }
+       updateLater();   
+     }/*                                                                   
+    function move() {                                                           
+      var elem = document.getElementById("container");                          
+      var pos = 0;                                                                       
+      function updateLater() {                                                  
+        if(pos%2==0) {                                                          
+          elem.style.color = "purple"";                                             
+        }                                                                       
+        else {                                                                  
+          elem.style.color = "black";                                             
+        }                                                                       
+        pos+=1;                                                                   
+        setTimeout(updateLater, 500);                                           
+      }                                                                         
+    }*/                                                                           
+    </script>                                                                   
+                                                                
+  </body>                                                                       
+</html>  

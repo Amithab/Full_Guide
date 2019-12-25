@@ -1,0 +1,196 @@
+#terminal-background {
+  background-color: #300a24;
+  height: 410px;
+  width: 732px;
+  /*color: #8ae234;*/
+  color: #66ff33;
+  font-family:"ubuntu mono";
+  font-size:16px;
+  font-weight:600;
+  padding: 2px 0px 0px 0px;
+}
+
+.whiteText {
+  color: white;
+  font-weight: normal;
+}
+
+.blueText {
+  color: #0099ff;
+  font-weight: normal;
+}
+
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+
+.tooltip {
+  position: relative;
+  /* Removed this- display: inline-block;*/
+}
+
+#extrawidetooltip {
+  width: 200px;
+  margin-left: -100px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  height: 60px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  /*border-radius: 6px;*/
+  padding: 1px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -70px;
+  
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+.letter {
+  width: 5rem;
+}
+
+td {
+  width: 22rem;
+}
+
+#terminal-top {
+  height: 30px;
+  width: 732px;
+  background-color: #43423d;
+  border-radius: 5px 5px 0px 0px;
+  position:relative;
+}
+
+#test {
+  position: absolute;
+  height: 17px;
+  width: 17px;
+  border-radius: 15px;
+  background-color: black;
+  margin: 7px 0px 0px 7px;
+}
+
+#exit-button {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  border-radius: 15px;
+  background-color: #e55e30;
+  margin: 7px 0px 0px 7px;
+  border: 1px solid #3a3935;
+}
+
+#x-symbol {
+	margin: -3px 0px 0px 5px;
+	position: absolute;
+  width: 10px;
+  height: 10px;
+
+}
+
+#minimize-symbol {
+	margin: -5px 0px 0px 4px;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+}
+
+#minimize-button {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  border-radius: 15px;
+  background-color: #75746d;
+  margin: 7px 0px 0px 27px;
+  border: 1px solid #3a3935;
+}
+
+#resize-button {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  border-radius: 15px;
+  background-color: #75746d;
+  margin: 7px 0px 0px 47px;
+  border: 1px solid #3a3935;
+}
+
+#terminal {
+  font-weight: 100;
+  font-size: 30px;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
