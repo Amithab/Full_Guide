@@ -1,0 +1,17 @@
+{
+  "name": "npm_prac",
+  "version": "1.0.0",
+  "description": "following npm scripts tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "say-hello": "echo 'Hello World'",
+    "awesome-npm": "npm run say-hello && echo 'echo NPM is awesome!'",
+    "clean": "rm -r dist && mkdir dist",
+    "build": "npm run clean && webpack",
+    "bash-hello": "bash hello.sh",
+    "js-add": "node add.js"
+  },
+  "author": "Amithab",
+  "license": "ISC"
+}
