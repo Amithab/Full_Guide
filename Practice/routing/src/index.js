@@ -22,9 +22,10 @@ const routing = (
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
+      <hr />
       <Switch>
         <Route exact path="/" component={App} /> {/* use exact or / is shared by both users and contact and home will appear in both*/}
-        <Route path="/users/:id" component={Users} />
+        <Route path="/users" component={Users} />
         <Route path="/contact" component={Contact} />
         <Route component={Notfound} />
       </Switch>
