@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 import App from './App';
 import Users from './users';
 import Contact from './contact';
+import Notfound from './notfound';
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
@@ -21,9 +22,12 @@ const routing = (
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
-      <Route exact path="/" component={App} /> {/* use exact or / is shared by both users and contact and home will appear in both*/}
-      <Route path="/users" component={Users} />
-      <Route path="/contact" component={Contact} />
+      <Switch>
+        <Route exact path="/" component={App} /> {/* use exact or / is shared by both users and contact and home will appear in both*/}
+        <Route path="/users/:id" component={Users} />
+        <Route path="/contact" component={Contact} />
+        <Route component={Notfound} />
+      </Switch>
     </div>
   </Router>
 );
