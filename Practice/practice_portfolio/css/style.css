@@ -1,3 +1,183 @@
-body {
-  background: red;
+*, 
+*::before,
+*::after {
+  box-sizing: border-box; /* universal box sizing */
 }
+
+/*html {
+  box-sizing: border-box; // universal box sizing with inheritance
+}
+*, *::before, *::after {
+  box-sizing: inherit; // more flexible
+}*/
+
+/* Custom properties, update there for your own design */
+
+:root { /* Selects root element of tree - in this case <html> but with greater specificity*/
+  --ff-primary: 'Source Sans Pro', sans-serif; /* custom properties can be invoked later with var(--ff-primary)*/
+  --ff-secondary: 'Source Code Pro', monospace;
+
+  --fw-reg: 300; /* font weight */
+  --fw-bold: 900;
+
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-accent: #16e0bd;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem; /* related to variables in sass, but can change custom properties here in media queries */
+
+  --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+        0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+@media (min-width: 800px) { /* When bigger than 800px wide, use this */
+  :root { 
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+/* General styles */
+
+body {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+section {
+  padding: 5em 2em; /* Keep stuff from touching side of screen */
+}
+
+img {
+  display: block; /* Helps with issues for some images */
+  max-width: 100%; /* Prevents overflow of images */
+}
+
+strong { font-weight: var(--fw-bold) }
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+
+.section__title {
+  margin-bottom: .25em;
+}
+
+.section__title--intro {
+  font-weight: var(--fw-reg);
+}
+
+.section__title--intro strong {
+  display: block; /* so winged god is always on its own line */
+}
+
+.section__subtitle {
+  margin: 0;
+  font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+  background: var(--clr-accent);
+  padding: .25em 1em;
+  font-family: var(--ff-secondary);
+  margin-bottom: 1em;
+}
+
+
+/* header */
+
+nav { display: none; }
+
+
+/* Intro section */
+
+.intro {
+  position: relative;
+}
+
+.section__subtitle--intro {
+  display: inline-block; /* Sets width to be size of itself */
+}
+
+.intro__img {
+  box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+  .intro {
+    display: grid;
+    width: min-content; /* Shrinks it down */
+    margin: 0 auto; /* Keep it centered */
+    grid-column-gap: 1em; /* Gap between front-end dev and pic */
+    grid-template-areas:
+      "img title"
+      "img subtitle";
+    grid-template-columns: min-content max-content; /* Shrink down images as much as possible and maximize text */
+  }
+
+  .intro__img {
+    grid-area: img;
+    min-width: 250px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .section__subtitle--intro {
+    align-self: start; /* Stops front end dev from stretching down */
+    grid-column: -1 / 1; /* Stretches the whole length */
+    grid-row: 2; /* Removes wanting to not overlap */
+    text-align: right; /* Move it out of picture */
+    position: relative;
+    left: -1.5em; /* Pulls it over beyond grid */
+    width: calc(100% + 1.5em); /* Width bigger than 100% */
+  }
+}
+
+
+/* My services section */
+
+.my-services {
+  background-color: var(--clr-dark); /* In case image does not load */
+  background-image: url(../img/services-bg.jpg); /* Need background image TODO */
+  background-size: cover;
+  background-blend-mode: multiply; /* Makes background darker */
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.section__title--services {
+  color: var(--clr-accent);
+  position: relative;
+}
+
+.section__title--services::after { /* Creates line after what i do title */
+  content: ''; /* pseudo elements always need content */
+  display: block;
+  width: 3em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: var(--clr-light);
+  opacity: 0.5;
+}
+
+
