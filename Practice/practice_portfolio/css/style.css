@@ -44,6 +44,10 @@
 
 /* General styles */
 
+html {
+  scroll-behavior: smooth; /* Scrolls to new position in page not as abrupt */
+}
+
 body {
   background: var(--clr-light);
   color: var(--clr-dark);
