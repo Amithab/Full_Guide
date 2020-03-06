@@ -258,6 +258,10 @@ header {
 
 .intro__img {
   box-shadow: var(--bs);
+
+  width: 100%; /* Resize different sized images to fit */
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 600px) {
@@ -464,4 +468,19 @@ header {
 
 .social-list__link {
   padding: .5em;
+}
+
+
+/* Individual portfolio item styles */
+
+.portfolio-item-individual {
+  padding: 0 2em 2em;
+  max-width: 1000px;
+  margin: 0 auto; /* center */
+}
+
+.portfolio-item-individual p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
